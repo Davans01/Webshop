@@ -3,5 +3,23 @@
 {% block title %}Hello DefaultController!{% endblock %}
 
 {% block body %}
-<h1> Welkom bij de home pagina!</h1>
+<h2> Welkom bij onze webshop</h2>
+<br>
+<div class="card">
+  <h5 class="card-header">Webshop</h5>
+  <div class="card-body">
+    <h5 class="card-title">Welkom bij onze webshop</h5>
+    <p class="card-text">Welkom bij onze webshop hier kunt u allemaal producten kopen!</p>
+    <a href="/products" class="btn btn-primary">Producten</a>
+  </div>
+</div>
+<br>
+<div class="card">
+  <h5 class="card-header">Inloggen</h5>
+  <div class="card-body">
+    <h5 class="card-title">Registeren</h5>
+    <p class="card-text">Als u producten wilt kopen moet u eerst registeren</p>
+    <a href="/register" class="btn btn-primary">Registeren</a>
+  </div>
+</div>
 {% endblock %}
