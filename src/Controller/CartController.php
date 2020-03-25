@@ -103,7 +103,7 @@ class CartController extends AbstractController
         $cart = $session->get('cart', array());
 
         // if it doesn't exist redirect to cart index page. end
-        if(!$cart[$id]) { $this->redirect( $this->generateUrl('cart') ); }
+        if(!$cart[$id]) { $this->redirect( $this->generateUrl('cart_view') ); }
 
         // check if the $id already exists in it.
         if( isset($cart[$id]) ) {
@@ -112,7 +112,7 @@ class CartController extends AbstractController
                 unset($cart[$id]);
             }
         } else {
-            return $this->redirect( $this->generateUrl('cart') );
+            return $this->redirect( $this->generateUrl('cart_view') );
         }
 
         $session->set('cart', $cart);
@@ -120,7 +120,7 @@ class CartController extends AbstractController
         //echo('<pre>');
         //print_r($cart); echo ('</pre>');die();
 
-        return $this->redirect( $this->generateUrl('cart') );
+        return $this->redirect( $this->generateUrl('cart_view') );
     }
 
 }
