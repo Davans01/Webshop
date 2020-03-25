@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Products{% endblock %}
+{% block title %}Producten aanpassen{% endblock %}
 
 {% block body %}
-    <h1>Edit Products</h1>
+    <h1>Producten aanpassen</h1>
 
     {{ include('products/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a class="btn btn-dark" href="{{ path('products_index') }}">back to list</a>
+    <a class="btn btn-dark" href="{{ path('products_index') }}">Terug naar lijst</a>
 
     {{ include('products/_delete_form.html.twig') }}
 {% endblock %}

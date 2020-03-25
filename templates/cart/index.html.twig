@@ -1,15 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CartController!{% endblock %}
+{% block title %}Betalen{% endblock %}
 
 {% block body %}
 
-    <h1>SHOPPING-CART</h1>
+    <h1>Winkelwagen</h1>
 
     <ul class="thumbnails">
 
         {% if empty %}
-            <h5>Your shopping cart is empty.</h5>
+            <h5>Uw winkelwagen is leeg</h5>
         {% endif %}
         {% set cart = app.session.get('cart') %}
         {% set total = 0 %}
@@ -25,9 +25,9 @@
                             <th>Id</th>
                             <th>Quantity</th>
                             <th>Code</th>
-                            <th>Price</th>
-                            <th>Total</th>
-                            <th>Delete</th>
+                            <th>Prijs</th>
+                            <th>Totaal</th>
+                            <th>Verwijderen</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -46,7 +46,7 @@
                                     {% endif %}
                                 {% endfor %}
 
-                                <td><a href="{{ path('cart_remove', {'id': key}) }}"><button class="btn btn-danger">Remove</button></a></td>
+                                <td><a href="{{ path('cart_remove', {'id': key}) }}"><button class="btn btn-danger">Verwijderen</button></a></td>
                             </tr>
                         {% endfor %}
                         </tbody>
@@ -58,7 +58,7 @@
         {% endif %}
     </ul>
 
-    <H4 class="right">Total in Cart = €{{ total | number_format(2) }}</H4>
+    <H4 class="right">Totaal prijs: = €{{ total | number_format(2) }}</H4>
     <a href="/products"><button type="button" class="btn btn-info col-lg-2 right">Winkelen</button></a>
     <a href="/"><button type="button" class="btn btn-success col-lg-2 pull-right">Betalen</button></a>
 

@@ -1,18 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Products index{% endblock %}
+{% block title %}Producten{% endblock %}
 
 {% block body %}
-    <h1>Products index</h1>
+    <h1>Onze producten</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Description</th>
-                <th>Vat</th>
-                <th>Price</th>
-                <th>Actions</th>
+                <th>Beschrijving</th>
+                <th>BTW</th>
+                <th>Prijs</th>
+                <th>Acties</th>
             </tr>
         </thead>
         <tbody>
@@ -23,9 +23,9 @@
                 <td>{{ product.vat }}</td>
                 <td>{{ product.price }}</td>
                 <td>
-                    <a class="btn btn-primary" href="{{ path('products_show', {'id': product.id}) }}">Show</a>
-                    <a class="btn btn-warning" href="{{ path('products_edit', {'id': product.id}) }}">Edit</a>
-                    <a class="btn btn-info" href="{{ path('cart_add', {'id': product.id}) }}">Add</a>
+                    <a class="btn btn-primary" href="{{ path('products_show', {'id': product.id}) }}">Bekijken</a>
+                    <a class="btn btn-warning" href="{{ path('products_edit', {'id': product.id}) }}">Aanpassen</a>
+                    <a class="btn btn-info" href="{{ path('cart_add', {'id': product.id}) }}">Toevoegen</a>
                 </td>
             </tr>
         {% else %}
@@ -36,6 +36,6 @@
         </tbody>
     </table>
 <div class="text-center">
-    <a class="btn btn-success" href="{{ path('products_new') }}">Create new</a>
+    <a class="btn btn-success" href="{{ path('products_new') }}">Nieuwe product maken</a>
 </div>
 {% endblock %}
